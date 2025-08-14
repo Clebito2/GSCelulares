@@ -1,0 +1,499 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta Comercial - GS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #00e800;
+            --color-background: #06192a;
+            --color-card: #0d2a45;
+            --color-text: #f0f8ff;
+            --color-text-muted: #a0aec0;
+            --font-body: 'Poppins', sans-serif;
+            --font-secondary: 'Merriweather', serif;
+        }
+        body {
+            margin: 0;
+            font-family: var(--font-body);
+            background-color: var(--color-background);
+            background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+            background-attachment: fixed;
+            color: var(--color-text);
+            -webkit-font-smoothing: antialiased;
+            font-size: 16px;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        section {
+            padding: 4rem 0;
+        }
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            color: var(--color-text);
+        }
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; text-align: center; margin-bottom: 3rem; }
+        h3 { font-size: 1.25rem; }
+        h4 { font-size: 1.1rem; margin: 0; }
+        p { line-height: 1.6; color: var(--color-text-muted); }
+
+        .hero {
+            background-image: linear-gradient(rgba(4, 18, 31, 0.85), rgba(4, 18, 31, 0.85)), url('https://images.unsplash.com/photo-1554494583-c4e16298348c?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 5rem 0;
+        }
+        .hero .brand-green {
+            color: var(--color-primary);
+        }
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--color-text);
+        }
+
+        .card {
+            background-color: var(--color-card);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            border-left: 4px solid var(--color-primary);
+        }
+        .card.diagnostic p {
+            font-family: var(--font-secondary);
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--color-text);
+        }
+        
+        .action-plan {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 200px;
+        }
+        .step-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--color-primary);
+            color: var(--color-background);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .step .duration {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--color-text);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--color-card);
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #1a3a5a;
+        }
+        th {
+            color: var(--color-text);
+            font-weight: 600;
+        }
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+        .text-right { text-align: right; }
+        
+        ul.scope-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        ul.scope-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .check-icon {
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            margin-top: -4px;
+        }
+
+        .total-investment {
+            text-align: center;
+            background-color: #04121f;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            margin: 2rem 0;
+        }
+        .total-investment p {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+        .total-investment .total-value {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-top: 0.5rem;
+        }
+        .footer {
+            background-color: #000;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        .footer img {
+            max-width: 200px;
+            margin-bottom: 2rem;
+        }
+        .footer p {
+            color: #777;
+            margin: 0.25rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Plano de Ação e Proposta para <span class="brand-green">GS</span></h1>
+            <p>Apresentado por Luiz Portal em: 14 de agosto de 2025</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="diagnosis">
+            <div class="container">
+                <h2>Diagnóstico Estratégico</h2>
+                <div class="card diagnostic">
+                    <p>"A empresa precisa de mapeamento de processos, redesenho da parte comercial, planejamento estratégico, auditoria financeira e estruturação dos fluxos financeiros. Há necessidade de separar as finanças pessoais das empresariais e estruturar o processo financeiro. Na área de pessoas, é preciso desenhar a estrutura organizacional e mapear as competências da equipe."</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="action-plan">
+            <div class="container">
+                <h2>Nosso Plano de Ação (Macro)</h2>
+                <div class="action-plan">
+                    
+        <div class="step">
+            <div class="step-icon">1</div>
+            <div class="step-content">
+                <h3>Diagnóstico Detalhado e Mapeamento</h3>
+                <p class="duration">2 semanas</p>
+                <p>Análise aprofundada da situação atual da empresa, identificando os principais gargalos e oportunidades de melhoria em processos, finanças, área comercial e gestão de pessoas.</p>
+            </div>
+        </div>
+    
+        <div class="step">
+            <div class="step-icon">2</div>
+            <div class="step-content">
+                <h3>Redesenho de Processos e Estruturação Financeira</h3>
+                <p class="duration">4 semanas</p>
+                <p>Implementação de novos fluxos de trabalho e reestruturação das finanças da empresa, separando contas pessoais e empresariais, além de otimizar o processo financeiro.</p>
+            </div>
+        </div>
+    
+        <div class="step">
+            <div class="step-icon">3</div>
+            <div class="step-content">
+                <h3>Implementação de Estratégias Comerciais e Financeiras</h3>
+                <p class="duration">6 semanas</p>
+                <p>Colocação em prática das estratégias definidas, com foco na melhoria do desempenho comercial e na gestão eficiente dos recursos financeiros.</p>
+            </div>
+        </div>
+    
+        <div class="step">
+            <div class="step-icon">4</div>
+            <div class="step-content">
+                <h3>Desenho da Estrutura Organizacional e Mapeamento de Competências</h3>
+                <p class="duration">3 semanas</p>
+                <p>Definição da estrutura organizacional da empresa e mapeamento das competências da equipe, visando otimizar o desempenho e o desenvolvimento dos colaboradores.</p>
+            </div>
+        </div>
+    
+        <div class="step">
+            <div class="step-icon">5</div>
+            <div class="step-content">
+                <h3>Auditoria Financeira e Planejamento Estratégico</h3>
+                <p class="duration">4 semanas</p>
+                <p>Realização de auditoria financeira para identificar áreas de melhoria e elaboração de um planejamento estratégico para garantir o crescimento sustentável da empresa.</p>
+            </div>
+        </div>
+    
+                </div>
+            </div>
+        </section>
+
+        <section id="schedule">
+            <div class="container">
+                <h2>Cronograma de Entregáveis</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Etapa</th>
+                            <th>Entregável</th>
+                            <th>Responsável</th>
+                            <th class="text-right">Prazo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+        <tr>
+            <td>1</td>
+            <td>Relatório de Diagnóstico Completo</td>
+            <td>Consultor Líder</td>
+            <td class="text-right">10 dias</td>
+        </tr>
+    
+        <tr>
+            <td>2</td>
+            <td>Redesenho dos Processos Chave</td>
+            <td>Consultor Líder</td>
+            <td class="text-right">15 dias</td>
+        </tr>
+    
+        <tr>
+            <td>2</td>
+            <td>Implementação de Controles Financeiros</td>
+            <td>Especialista Financeiro</td>
+            <td class="text-right">20 dias</td>
+        </tr>
+    
+        <tr>
+            <td>3</td>
+            <td>Implementação do Novo Processo Comercial</td>
+            <td>Consultor Líder</td>
+            <td class="text-right">30 dias</td>
+        </tr>
+    
+        <tr>
+            <td>3</td>
+            <td>Treinamento da Equipe Comercial</td>
+            <td>Consultor Líder</td>
+            <td class="text-right">5 dias</td>
+        </tr>
+    
+        <tr>
+            <td>4</td>
+            <td>Desenho da Estrutura Organizacional</td>
+            <td>Consultor Líder</td>
+            <td class="text-right">10 dias</td>
+        </tr>
+    
+        <tr>
+            <td>4</td>
+            <td>Mapeamento de Competências da Equipe</td>
+            <td>Consultor Líder</td>
+            <td class="text-right">10 dias</td>
+        </tr>
+    
+        <tr>
+            <td>5</td>
+            <td>Relatório de Auditoria Financeira</td>
+            <td>Especialista Financeiro</td>
+            <td class="text-right">15 dias</td>
+        </tr>
+    
+        <tr>
+            <td>5</td>
+            <td>Plano Estratégico Detalhado</td>
+            <td>Consultor Líder</td>
+            <td class="text-right">15 dias</td>
+        </tr>
+    
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="details">
+            <div class="container">
+                <h2>Detalhes da Parceria</h2>
+                
+                <h3>Escopo Detalhado</h3>
+                <div class="card" style="margin-top: 1rem;">
+                    <ul class="scope-list">
+                        
+        <li>
+            <div class="check-icon">✓</div>
+            <div>
+                <h4>Relatório de Diagnóstico Completo</h4>
+                <p>Responsável: Consultor Líder | Prazo: 10 dias</p>
+            </div>
+        </li>
+    
+        <li>
+            <div class="check-icon">✓</div>
+            <div>
+                <h4>Redesenho dos Processos Chave</h4>
+                <p>Responsável: Consultor Líder | Prazo: 15 dias</p>
+            </div>
+        </li>
+    
+        <li>
+            <div class="check-icon">✓</div>
+            <div>
+                <h4>Implementação de Controles Financeiros</h4>
+                <p>Responsável: Especialista Financeiro | Prazo: 20 dias</p>
+            </div>
+        </li>
+    
+        <li>
+            <div class="check-icon">✓</div>
+            <div>
+                <h4>Implementação do Novo Processo Comercial</h4>
+                <p>Responsável: Consultor Líder | Prazo: 30 dias</p>
+            </div>
+        </li>
+    
+        <li>
+            <div class="check-icon">✓</div>
+            <div>
+                <h4>Treinamento da Equipe Comercial</h4>
+                <p>Responsável: Consultor Líder | Prazo: 5 dias</p>
+            </div>
+        </li>
+    
+        <li>
+            <div class="check-icon">✓</div>
+            <div>
+                <h4>Desenho da Estrutura Organizacional</h4>
+                <p>Responsável: Consultor Líder | Prazo: 10 dias</p>
+            </div>
+        </li>
+    
+        <li>
+            <div class="check-icon">✓</div>
+            <div>
+                <h4>Mapeamento de Competências da Equipe</h4>
+                <p>Responsável: Consultor Líder | Prazo: 10 dias</p>
+            </div>
+        </li>
+    
+        <li>
+            <div class="check-icon">✓</div>
+            <div>
+                <h4>Relatório de Auditoria Financeira</h4>
+                <p>Responsável: Especialista Financeiro | Prazo: 15 dias</p>
+            </div>
+        </li>
+    
+        <li>
+            <div class="check-icon">✓</div>
+            <div>
+                <h4>Plano Estratégico Detalhado</h4>
+                <p>Responsável: Consultor Líder | Prazo: 15 dias</p>
+            </div>
+        </li>
+    
+                    </ul>
+                </div>
+                
+                <h3 style="margin-top: 3rem;">Investimento</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Entregável</th>
+                            <th class="text-right">Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+        <tr>
+            <td>Relatório de Diagnóstico Completo</td>
+            <td class="text-right">R$ 8.000,00</td>
+        </tr>
+    
+        <tr>
+            <td>Redesenho dos Processos Chave</td>
+            <td class="text-right">R$ 6.000,00</td>
+        </tr>
+    
+        <tr>
+            <td>Implementação de Controles Financeiros</td>
+            <td class="text-right">R$ 12.000,00</td>
+        </tr>
+    
+        <tr>
+            <td>Implementação do Novo Processo Comercial</td>
+            <td class="text-right">R$ 10.000,00</td>
+        </tr>
+    
+        <tr>
+            <td>Treinamento da Equipe Comercial</td>
+            <td class="text-right">R$ 4.000,00</td>
+        </tr>
+    
+        <tr>
+            <td>Desenho da Estrutura Organizacional</td>
+            <td class="text-right">R$ 5.000,00</td>
+        </tr>
+    
+        <tr>
+            <td>Mapeamento de Competências da Equipe</td>
+            <td class="text-right">R$ 6.000,00</td>
+        </tr>
+    
+        <tr>
+            <td>Relatório de Auditoria Financeira</td>
+            <td class="text-right">R$ 10.000,00</td>
+        </tr>
+    
+        <tr>
+            <td>Plano Estratégico Detalhado</td>
+            <td class="text-right">R$ 15.000,00</td>
+        </tr>
+    
+                    </tbody>
+                </table>
+                
+                <div class="total-investment">
+                    <p>Valor Total do Projeto</p>
+                    <p class="total-value">R$ 76.000,00</p>
+                </div>
+
+                <div>
+                    <h3>Condições de Pagamento:</h3>
+                    <p>50% na assinatura do contrato e 50% na entrega final.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <img src="https://raw.githubusercontent.com/Clebito2/layout/main/Logo%20live%20oficial-34.png" alt="Logo Live Liderança & Vendas">
+            <p>Live Liderança & Vendas</p>
+            <p>Alta performance começa com atitude.</p>
+            <p style="margin-top: 1rem;">Luiz Portal - luizportal@ecossistemalive.com.br</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+    
