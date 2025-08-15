@@ -136,23 +136,13 @@
                 </div>
 
                 <div class="flex justify-center border-b border-gray-700 mb-8 overflow-x-auto">
-                    <button class="tab-button active text-lg font-semibold py-3 px-6" onclick="openTab(event, 'scope')">Escopo Geral</button>
-                    <button class="tab-button text-lg font-semibold py-3 px-6" onclick="openTab(event, 'comercial')">Comercial (Dinamix)</button>
-                    <button class="tab-button text-lg font-semibold py-3 px-6" onclick="openTab(event, 'financeiro')">Financeiro (Jacque)</button>
+                    <button class="tab-button active text-lg font-semibold py-3 px-6" onclick="openTab(event, 'scope')">Escopo</button>
                     <button class="tab-button text-lg font-semibold py-3 px-6" onclick="openTab(event, 'investment')">Investimento</button>
                     <button class="tab-button text-lg font-semibold py-3 px-6" onclick="openTab(event, 'contract')">Contrato</button>
                 </div>
 
                 <div id="scope" class="tab-content">
-                    <div id="scope-details" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
-                </div>
-
-                <div id="comercial" class="tab-content hidden">
-                    <div id="comercial-details" class="max-w-4xl mx-auto bg-gray-900/50 p-8 rounded-lg"></div>
-                </div>
-
-                <div id="financeiro" class="tab-content hidden">
-                    <div id="financeiro-details" class="max-w-4xl mx-auto"></div>
+                    <div id="scope-details" class="space-y-12"></div>
                 </div>
 
                 <div id="investment" class="tab-content hidden">
@@ -223,39 +213,49 @@ const dados = {
             "atividades": ["Treinamentos (Comercial, Financeiro, Ferramentas de Gestão)", "Implementação da Gestão por Indicadores (KPIs)", "Acompanhamento Prático da Operação (Dia de Vendedor, Rotinas de Gestão)", "Elaboração do Ramp-up de Treinamento Comercial Contínuo"]
         }
     ],
-    "escopoDetalhado": [
-        { "area": "Financeiro e Processos", "entregaveis": ["Relatório de Auditoria Financeira", "Mapeamento de Processos (AS-IS e TO-BE)", "Estruturação de Fluxo de Caixa e Controles Financeiros", "Implementação da separação de contas Pessoa Física e Jurídica"] },
-        { "area": "Estratégia e Gestão", "entregaveis": ["Documento de Planejamento Estratégico Completo", "Definição de Posicionamento de Mercado", "Desenho da Estrutura Organizacional (Organograma)", "Mapeamento de Competências e Funções"] },
-        { "area": "Comercial (Daniel)", "entregaveis": ["Playbook de Vendas Completo", "Roteiros Comerciais (Prospecção e Inbound)", "Dashboard de Gestão Comercial em tempo real", "Plano de Ramp-up para novos vendedores", "Treinamentos de Vendas de Alto Impacto", "Implementação de rotinas de gestão por indicadores (Pipeline, etc.)"] }
-    ],
-    "financeiroJacque": [
-        { "servico": "Relatório de Auditoria Financeira", "valor": 8000.00 },
-        { "servico": "Mapeamento de Processos (AS-IS e TO-BE)", "valor": 12000.00 },
-        { "servico": "Estruturação de Fluxo de Caixa e Controles Financeiros", "valor": 10000.00 },
-        { "servico": "Implementação da separação de contas Pessoa Física e Jurídica", "valor": 5000.00 }
-    ],
-    "comercialDinamix": [
-        { "etapa": 1, "descricao": "Reunião com gestores para entendimento do processo comercial" },
-        { "etapa": 2, "descricao": "Observação prática do processo de vendas" },
-        { "etapa": 3, "descricao": "Apresentação das sugestões de melhoria, METAS SMART e alinhamento inicial" },
-        { "etapa": 4, "descricao": "Pesquisa, observação e testes de roteiro comercial" },
-        { "etapa": 5, "descricao": "Apresentação do fluxograma e do roteiro inicial de vendas" },
-        { "etapa": 6, "descricao": "Ajustes eventuais de processos e documentos" },
-        { "etapa": 7, "descricao": "Treinamento equipe comercial: Prospecção ativa e tratamento de leads Inbound" },
-        { "etapa": 8, "descricao": "Treinamento equipe comercial: Vendas de alto impacto" },
-        { "etapa": 9, "descricao": "Acompanhamento prático: dia de prospecção" },
-        { "etapa": 10, "descricao": "Acompanhamento prático: orçamento, negociação e visita" },
-        { "etapa": 11, "descricao": "Acompanhamento prático: Dia de vendedor" },
-        { "etapa": 12, "descricao": "Acompanhamento prático: rotinas de gestão" },
-        { "etapa": 13, "descricao": "Reunião de alinhamento com equipe comercial para ajustes do processo e coleta de feedbacks" },
-        { "etapa": 14, "descricao": "Elaboração de Dashboard para gestão comercial" },
-        { "etapa": 15, "descricao": "Treinamento de Dashboard" },
-        { "etapa": 16, "descricao": "Início da gestão por indicadores: Origem de Leads, motivos de ganho/perda, taxa de conversão, ciclo médio de vendas, definição de PIC (Perfil ideal de Clientes)" },
-        { "etapa": 17, "descricao": "Reunião de rotina: Pipeline da semana com vendedores" },
-        { "etapa": 18, "descricao": "Reunião de rotina: Resultados com Diretoria" },
-        { "etapa": 19, "descricao": "Acompanhamento geral de vendas" },
-        { "etapa": 20, "descricao": "Elaboração do Ramp-up de Treinamento Comercial (software + passo a passo)" },
-        { "etapa": 21, "descricao": "Elaboração do Playbook" }
+    "escopoCompleto": [
+        { 
+            "area": "Financeiro e Processos", 
+            "tipo": "tabela",
+            "conteudo": [
+                { "servico": "Relatório de Auditoria Financeira", "valor": 8000.00 },
+                { "servico": "Mapeamento de Processos (AS-IS e TO-BE)", "valor": 12000.00 },
+                { "servico": "Estruturação de Fluxo de Caixa e Controles Financeiros", "valor": 10000.00 },
+                { "servico": "Implementação da separação de contas Pessoa Física e Jurídica", "valor": 5000.00 }
+            ]
+        },
+        { 
+            "area": "Estratégia e Gestão", 
+            "tipo": "lista",
+            "conteudo": ["Documento de Planejamento Estratégico Completo", "Definição de Posicionamento de Mercado", "Desenho da Estrutura Organizacional (Organograma)", "Mapeamento de Competências e Funções"] 
+        },
+        { 
+            "area": "Comercial", 
+            "tipo": "timeline",
+            "conteudo": [
+                { "etapa": 1, "descricao": "Reunião com gestores para entendimento do processo comercial" },
+                { "etapa": 2, "descricao": "Observação prática do processo de vendas" },
+                { "etapa": 3, "descricao": "Apresentação das sugestões de melhoria, METAS SMART e alinhamento inicial" },
+                { "etapa": 4, "descricao": "Pesquisa, observação e testes de roteiro comercial" },
+                { "etapa": 5, "descricao": "Apresentação do fluxograma e do roteiro inicial de vendas" },
+                { "etapa": 6, "descricao": "Ajustes eventuais de processos e documentos" },
+                { "etapa": 7, "descricao": "Treinamento equipe comercial: Prospecção ativa e tratamento de leads Inbound" },
+                { "etapa": 8, "descricao": "Treinamento equipe comercial: Vendas de alto impacto" },
+                { "etapa": 9, "descricao": "Acompanhamento prático: dia de prospecção" },
+                { "etapa": 10, "descricao": "Acompanhamento prático: orçamento, negociação e visita" },
+                { "etapa": 11, "descricao": "Acompanhamento prático: Dia de vendedor" },
+                { "etapa": 12, "descricao": "Acompanhamento prático: rotinas de gestão" },
+                { "etapa": 13, "descricao": "Reunião de alinhamento com equipe comercial para ajustes do processo e coleta de feedbacks" },
+                { "etapa": 14, "descricao": "Elaboração de Dashboard para gestão comercial" },
+                { "etapa": 15, "descricao": "Treinamento de Dashboard" },
+                { "etapa": 16, "descricao": "Início da gestão por indicadores: Origem de Leads, motivos de ganho/perda, taxa de conversão, etc." },
+                { "etapa": 17, "descricao": "Reunião de rotina: Pipeline da semana com vendedores" },
+                { "etapa": 18, "descricao": "Reunião de rotina: Resultados com Diretoria" },
+                { "etapa": 19, "descricao": "Acompanhamento geral de vendas" },
+                { "etapa": 20, "descricao": "Elaboração do Ramp-up de Treinamento Comercial" },
+                { "etapa": 21, "descricao": "Elaboração do Playbook" }
+            ]
+        }
     ],
     "investimento": {
         "valorTotalNumerico": 90000.00,
@@ -291,58 +291,66 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     `).join('');
 
-    // Preenche Escopo Geral
+    // Preenche Escopo Unificado
     const scopeContainer = document.getElementById('scope-details');
-    scopeContainer.innerHTML = dados.escopoDetalhado.map(item => `
-        <div class="bg-gray-900/50 p-6 rounded-lg h-full">
-            <h4 class="text-xl font-semibold"><span class="title-green">${item.area}</span></h4>
-            <ul class="mt-4 list-disc list-inside text-gray-400 space-y-2">
-                ${item.entregaveis.map(ent => `<li>${ent}</li>`).join('')}
-            </ul>
-        </div>
-    `).join('');
-
-    // Preenche Escopo Comercial (Dinamix)
-    const comercialContainer = document.getElementById('comercial-details');
-    comercialContainer.innerHTML = `
-        <h3 class="text-2xl font-bold mb-6 text-center"><span class="title-green">Atividades do Eixo Comercial</span></h3>
-        <ol class="relative border-l border-gray-700 space-y-6">
-            ${dados.comercialDinamix.map(item => `
-                <li class="ml-6">
-                    <span class="absolute flex items-center justify-center w-6 h-6 bg-gray-700 rounded-full -left-3 ring-4 ring-gray-900/50 text-sm">${item.etapa}</span>
-                    <p class="text-gray-300">${item.descricao}</p>
-                </li>
-            `).join('')}
-        </ol>
-    `;
-    
-    // Preenche Escopo Financeiro (Jacque)
-    const financeiroContainer = document.getElementById('financeiro-details');
-    const totalJaque = dados.financeiroJacque.reduce((acc, item) => acc + item.valor, 0);
-    financeiroContainer.innerHTML = `
-        <div class="bg-gray-900/50 rounded-lg shadow-lg overflow-hidden">
-            <table class="w-full text-left">
-                <thead class="bg-black/70">
-                    <tr>
-                        <th class="p-4 font-semibold text-lg">Serviço / Entregável Financeiro</th>
-                        <th class="p-4 font-semibold text-lg text-right">Valor</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    ${dados.financeiroJacque.map(item => `
-                        <tr class="border-b border-gray-800">
-                            <td class="p-4">${item.servico}</td>
-                            <td class="p-4 text-right">${formatCurrency(item.valor)}</td>
-                        </tr>
-                    `).join('')}
-                    <tr class="bg-black/70">
-                        <td class="p-4 text-xl font-bold text-brand-green">SUBTOTAL (FINANCEIRO/PROCESSOS)</td>
-                        <td class="p-4 text-xl font-bold text-brand-green text-right">${formatCurrency(totalJaque)}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    `;
+    scopeContainer.innerHTML = dados.escopoCompleto.map(area => {
+        let contentHtml = '';
+        switch(area.tipo) {
+            case 'tabela':
+                const subtotal = area.conteudo.reduce((acc, item) => acc + item.valor, 0);
+                contentHtml = `
+                    <div class="bg-gray-900/50 rounded-lg shadow-lg overflow-hidden">
+                        <table class="w-full text-left">
+                            <thead class="bg-black/70">
+                                <tr>
+                                    <th class="p-4 font-semibold text-lg">Serviço / Entregável</th>
+                                    <th class="p-4 font-semibold text-lg text-right">Valor</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${area.conteudo.map(item => `
+                                    <tr class="border-b border-gray-800">
+                                        <td class="p-4">${item.servico}</td>
+                                        <td class="p-4 text-right">${formatCurrency(item.valor)}</td>
+                                    </tr>
+                                `).join('')}
+                                <tr class="bg-black/70">
+                                    <td class="p-4 text-xl font-bold text-brand-green">SUBTOTAL</td>
+                                    <td class="p-4 text-xl font-bold text-brand-green text-right">${formatCurrency(subtotal)}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>`;
+                break;
+            case 'lista':
+                contentHtml = `
+                    <div class="bg-gray-900/50 p-6 rounded-lg h-full">
+                        <ul class="list-disc list-inside text-gray-400 space-y-2">
+                            ${area.conteudo.map(ent => `<li>${ent}</li>`).join('')}
+                        </ul>
+                    </div>`;
+                break;
+            case 'timeline':
+                contentHtml = `
+                    <div class="bg-gray-900/50 p-8 rounded-lg">
+                        <ol class="relative border-l border-gray-700 space-y-6">
+                            ${area.conteudo.map(item => `
+                                <li class="ml-6">
+                                    <span class="absolute flex items-center justify-center w-6 h-6 bg-gray-700 rounded-full -left-3 ring-4 ring-gray-900/50 text-sm">${item.etapa}</span>
+                                    <p class="text-gray-300">${item.descricao}</p>
+                                </li>
+                            `).join('')}
+                        </ol>
+                    </div>`;
+                break;
+        }
+        return `
+            <div class="max-w-4xl mx-auto">
+                <h3 class="text-2xl font-bold mb-6 text-center"><span class="title-green">${area.area}</span></h3>
+                ${contentHtml}
+            </div>
+        `;
+    }).join('');
 
     // Preenche Investimento
     const investmentContainer = document.getElementById('investment-details');
